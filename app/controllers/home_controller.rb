@@ -11,4 +11,7 @@ class HomeController < ApplicationController
   def sports
   end
 
+  def programming
+  end
+
 end

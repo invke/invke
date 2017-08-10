@@ -30,4 +30,11 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Gym"
   end
 
+  test "should get programming" do
+    get home_programming_url
+    assert_response :success
+    assert_select "h2", "Environment"
+    assert_select "h2", "Workstation"
+  end
+
 end
