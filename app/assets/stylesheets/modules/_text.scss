@@ -1,0 +1,43 @@
+$text__family--sans: 'Poppins', 'Helvetica Neue', sans-serif;
+$text__family--cursive: 'Damion', cursive;
+$text__color--base: #333333 !default;
+$text__color--alpha: #ff643f !default;
+$text__color--beta: #22b1c9 !default;
+$text__color--charlie: #56b55d !default;
+$text__color--delta: #ff85b3 !default;
+
+@mixin text($size, $line, $margin: 0, $family: $text__family--sans, $color :$text__color--base, $weight: normal) {
+  font-size: $size * 1px;
+  line-height: ($line / $size);
+  font-family: $family;
+  color: $color;
+  margin-bottom: $margin;
+}
+
+p, span {
+  @include text($base__font-size, $base__line, $color: $text__color--base)
+}
+
+h1 {
+  @include text(48, 48, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}
+
+h2 {
+  @include text(24, 24, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}
+
+h3 {
+  @include text(20, 20, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}
+
+h4 {
+  @include text(18, 18, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}
+
+h5 {
+  @include text(16, 16, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}
+
+h6 {
+  @include text(14, 14, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}

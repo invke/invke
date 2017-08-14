@@ -11,19 +11,9 @@
  * It is generally better to create a new file per style scope.
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
 
-$font-stack: Poppins, Helvetica, sans-serif;
-
-$font-stack-cursive: Fredoka One, cursive;
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-stack-cursive;
-}
-
-
-p, span {
-  font-family: $font-stack;
-}
+@import 'modules/base';
+@import 'modules/text';
