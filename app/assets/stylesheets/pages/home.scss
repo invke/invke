@@ -1,0 +1,91 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "../modules/base";
+@import "../modules/text";
+@import "../modules/navbar";
+
+$home__header-height: 250;
+
+.body-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //height: calc(100% - #{$navbar__height * 1px});
+  height: 100%;
+  overflow-y: auto;
+  padding-top: $navbar__height * 1px;
+  background-color: $color__primary--light;
+  background-color: rgba($color__primary--light, 0.6);
+}
+
+.body-content__background-overlay,
+.body-content__foreground-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.body-content__background-overlay {
+  z-index: -1;
+  background-image: image-url("chilean-andes--blurred.jpg");
+}
+
+.body-content__foreground-overlay {
+  display: none;
+}
+
+.header {
+  height: $home__header-height * 1px;
+}
+
+.header__title {
+  @include text(48, 64, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  margin-top: 10px;
+}
+
+.header__sub-title {
+  @include text(24, 24, $family: $text__family--sans, $color: $text__color--muted, $weight: normal);
+}
+
+.header__profile-pic {
+  height: $home__header-height * 1px;
+  width:  $home__header-height * 1px;
+  margin: auto;
+  background-color: $color__primary--dark;
+  border-radius: ($home__header-height / 2) * 1px;
+  border: 4px solid $color__accent;
+}
+
+.header__info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.info__icon {
+  color: $color__accent--alpha;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.info__text {}
+
+
+.header__networking {
+  border-top: 1px solid $color__primary;
+  padding-top: 20px;
+}
+
+
+.networking__github {
+  color: $color__accent--alpha;
+  margin-right: 20px;
+}
+
+.networking__stack-overflow {
+  color: $color__accent--alpha;
+}

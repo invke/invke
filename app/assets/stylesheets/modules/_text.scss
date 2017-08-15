@@ -1,12 +1,14 @@
-@import 'base';
+@import "base";
 
 $text__family--sans: 'Poppins', 'Helvetica Neue', sans-serif;
 $text__family--cursive: 'Damion', cursive;
+
 $text__color--base: #333333 !default;
-$text__color--alpha: #ff643f !default;
-$text__color--beta: #22b1c9 !default;
-$text__color--charlie: #56b55d !default;
-$text__color--delta: #ff85b3 !default;
+$text__color--muted: #777777 !default;
+$text__color--alpha: $color__accent--alpha !default;
+$text__color--beta: $color__accent--beta !default;
+$text__color--charlie: $color__accent--charlie !default;
+$text__color--delta: $color__accent--delta !default;
 
 @mixin text($size, $line, $margin: 0, $family: $text__family--sans, $color :$text__color--base, $weight: normal) {
   font-size: $size * 1px;
@@ -14,6 +16,7 @@ $text__color--delta: #ff85b3 !default;
   font-family: $family;
   color: $color;
   margin-bottom: $margin;
+  font-weight: $weight;
 }
 
 p, span {

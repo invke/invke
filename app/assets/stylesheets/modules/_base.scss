@@ -1,6 +1,12 @@
-$color__primary--light: #DD0000 !default;
-$color__primary: #C10000 !default;
-$color__primary--dark: #990000 !default;
+$color__primary--light: #FFFFFF !default;
+$color__primary: #C1C1C1 !default;
+$color__primary--dark: #999999 !default;
+
+$color__accent: #ff643f !default;
+$color__accent--alpha: $color__accent !default;
+$color__accent--beta: #22b1c9 !default;
+$color__accent--charlie: #56b55d !default;
+$color__accent--delta: #ff85b3 !default;
 
 $base__font-size: 14 !default;
 $base__line: 20 !default;

@@ -22,7 +22,11 @@
   <body>
     <%# TEMPLATE HEADER #%>
     <%= render partial: "shared/navbar" %>
-    <%# PAGE CONTENT #%>
-    <%= yield %>
+    <div class="body-content">
+      <%# PAGE CONTENT #%>
+      <%= yield %>
+      <div class="body-content__background-overlay"></div>
+      <div class="body-content__foreground-overlay" hidden="true"></div>
+    </div>
   </body>
 </html>

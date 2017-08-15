@@ -1,0 +1,23 @@
+@import "base";
+@import "text";
+
+$navbar__height: 50;
+$navbar__margin: 20;
+
+
+.navbar {
+  //background-color: $color__primary--light;
+  background-color: transparent;
+  margin: 0;
+  border: none;
+  z-index: 50;
+}
+
+.navbar__item {
+  @include text(16, 16, $family: $text__family--sans, $color: $text__color--base);
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    color: $text__color--alpha;
+  }
+}
