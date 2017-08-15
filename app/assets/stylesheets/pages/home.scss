@@ -8,7 +8,7 @@
 
 $home__header-height: 250;
 
-.body-content {
+.body__content {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,8 +21,8 @@ $home__header-height: 250;
   background-color: rgba($color__primary--light, 0.6);
 }
 
-.body-content__background-overlay,
-.body-content__foreground-overlay {
+.body__background-overlay,
+.body__foreground-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,12 +30,12 @@ $home__header-height: 250;
   height: 100%;
 }
 
-.body-content__background-overlay {
+.body__background-overlay {
   z-index: -1;
   background-image: image-url("chilean-andes--blurred.jpg");
 }
 
-.body-content__foreground-overlay {
+.body__foreground-overlay {
   display: none;
 }
 

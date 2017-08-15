@@ -19,14 +19,14 @@
     <link href="https://fonts.googleapis.com/css?family=Damion:400,700|Poppins:400,700" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="body">
     <%# TEMPLATE HEADER #%>
     <%= render partial: "shared/navbar" %>
-    <div class="body-content">
+    <div class="body__background-overlay"></div>
+    <div class="body__foreground-overlay" hidden="true"></div>
+    <div class="body__content">
       <%# PAGE CONTENT #%>
       <%= yield %>
-      <div class="body-content__background-overlay"></div>
-      <div class="body-content__foreground-overlay" hidden="true"></div>
     </div>
   </body>
 </html>
