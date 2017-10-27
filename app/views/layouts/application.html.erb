@@ -16,17 +16,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- Google fonts API inclusion -->
-    <link href="https://fonts.googleapis.com/css?family=Damion:400,700|Poppins:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Handlee|Pacifico:400|Poppins:300,400,700" rel="stylesheet">
   </head>
 
   <body class="body">
     <%# TEMPLATE HEADER #%>
     <%= render partial: "shared/navbar" %>
     <div class="body__background-overlay"></div>
-    <div class="body__foreground-overlay" hidden="true"></div>
+    <div class="body__foreground-overlay"></div>
     <div class="body__content">
       <%# PAGE CONTENT #%>
       <%= yield %>
+
+      <footer class="footer">
+        <div class="container">
+          <p class="footer__thanks">
+            Thank you for your visit, your feedback is welcome,
+            <br>
+            <br>
+            Have a good day,
+            <br>
+            Monty
+          </p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

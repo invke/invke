@@ -1,51 +1,104 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "../modules/base";
 @import "../modules/text";
 @import "../modules/navbar";
 
-$home__header-height: 250;
+$home__profile-height: 250;
 
-.body__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  //height: calc(100% - #{$navbar__height * 1px});
-  height: 100%;
-  overflow-y: auto;
-  padding-top: $navbar__height * 1px;
+$home__top-border-thickness: 30px;
+$home__left-border-thickness: 10px;
+$home__right-border-thickness: 10px;
+$home__bottom-border-thickness: 20px;
+
+.body {
+  &__content {
+    position: absolute;
+    top: $navbar__height;
+    left: 0;
+    width: 100%;
+    height: calc(100% - #{$navbar__height * 1px});
+    //height: 100%;
+    overflow-y: auto;
+    padding-top: 50px;
+    //background-color: $color__primary--light;
+    //background-color: rgba($color__primary--light, 0.0);
+  }
+
+  &__background-overlay,
+  &__foreground-overlay {}
+
+  &__background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - #{$home__left-border-thickness} - #{$home__right-border-thickness});
+    height: calc(100% - #{$home__top-border-thickness} - #{$home__bottom-border-thickness});
+    margin:
+            $home__top-border-thickness
+            $home__right-border-thickness
+            $home__bottom-border-thickness
+            $home__left-border-thickness;
+    z-index: -1;
+    background-image: image-url("chilean-andes--blurred.jpg");
+  }
+
+  &__foreground-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.footer {
+  height: 100px;
+  padding: 20px;
   background-color: $color__primary--light;
-  background-color: rgba($color__primary--light, 0.6);
+  margin-top: 50px;
+
+  &__thanks {
+    @include text(14, 14, $family: $text__family--cursive, $color: $text__color--muted, $weight: normal);
+  }
 }
 
-.body__background-overlay,
-.body__foreground-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+.about-content {
+  //background-color: rgba($color__primary--light, 0.95);
 
-.body__background-overlay {
-  z-index: -1;
-  background-image: image-url("chilean-andes--blurred.jpg");
-}
+  &__left-column {
+  }
 
-.body__foreground-overlay {
-  display: none;
+  &__right-column {
+  }
 }
 
 .header {
-  height: $home__header-height * 1px;
 }
 
 .header__title {
-  @include text(48, 64, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  position: relative;
+  @include text(46, 64, $margin: 80px, $family: $text__family--cursive, $color: $color__accent--alpha);
   margin-top: 10px;
+  text-align: center;
+  text-shadow: 5px 5px 30px $color__primary--light;
+
+  /*&::before {
+    content: "Welcome to my portfolio, my name is ..";
+    @include text(16, 20, $family: $text__family--handwritten, $color: $text__color--muted, $weight: 200);
+    position: absolute;
+    left: 20%;
+    top: -20px;
+  }
+
+  &::after {
+    content: ".. or Monty for short";
+    @include text(16, 20, $family: $text__family--handwritten, $color: $text__color--muted, $weight: 200);
+    position: absolute;
+    right: 30%;
+    bottom: -20px;
+  }*/
 }
 
 .header__sub-title {
@@ -53,12 +106,13 @@ $home__header-height: 250;
 }
 
 .header__profile-pic {
-  height: $home__header-height * 1px;
-  width:  $home__header-height * 1px;
+  height: $home__profile-height * 1px;
+  width: $home__profile-height * 1px;
   margin: auto;
-  background-color: $color__primary--dark;
-  border-radius: ($home__header-height / 2) * 1px;
-  border: 4px solid $color__accent;
+  background: url("http://via.placeholder.com/250x250") center;
+  border-radius: ($home__profile-height / 2) * 1px;
+  border: 16px solid $color__primary--light;
+  box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
 }
 
 .header__info {
@@ -66,26 +120,142 @@ $home__header-height: 250;
   margin-bottom: 20px;
 }
 
-.info__icon {
-  color: $color__accent--alpha;
-  margin-left: 10px;
-  margin-right: 10px;
+@mixin info__pre-text($content, $text-size: 24, $line: 28, $left: -30) {
+  &::before {
+    content: $content;
+    @include text($text-size, $line, $family: $text__family--heavy, $color: $color__primary--light, $weight: bold);
+    //text-shadow: 2px 2px 0px $color__primary--light;
+    position: absolute;
+    left: $left * 1px;
+    top: (4 * $line / 7) * -1px;
+    padding: 4px 4px;
+    //border-radius: 4px;
+    border-bottom-right-radius: ($line + 8) / 2 * 1px;
+    background-color: $color__accent--alpha;
+    box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
+  }
 }
 
-.info__text {}
-
-
-.header__networking {
-  border-top: 1px solid $color__primary;
-  padding-top: 20px;
+@mixin info__picture($background-url, $diameter) {
+  height: $diameter * 1px;
+  width: $diameter * 1px;
+  background: url($background-url) center;
 }
 
-
-.networking__github {
-  color: $color__accent--alpha;
-  margin-right: 20px;
+.about-content {
+  &__right-column {
+    padding-top: 32px;
+  }
 }
 
-.networking__stack-overflow {
-  color: $color__accent--alpha;
+.info {
+  margin-bottom: 20px;
+
+  &__content {
+    padding: 20px 20px;
+    background-color: $color__primary--light;
+    box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
+
+    &--left-icon {
+      margin-left: 40px !important;
+    }
+  }
+
+  &__text {
+    @include text(14, 20, $family: $text__family--sans);
+    position: relative;
+    text-align: left;
+    z-index: 50;
+  }
+
+
+  &__header {
+    @include text(18, 20, $family: $text__family--heavy, $color: $color__primary--light, $weight: bold);
+    //text-shadow: 2px 2px 0px $color__primary--light;
+    display: inline-block;
+    padding: 4px 4px;
+    margin: 0 0 4px 0;
+    //border-radius: 4px;
+    //border-bottom-right-radius: (20 + 8) / 2 * 1px;
+    background-color: $color__accent--alpha;
+    box-shadow: 8px 8px 16px rgba($color__primary--dark, 0.2);
+    z-index: 60;
+  }
+
+  &__icon {
+    top: 0 !important;
+    float: left;
+    font-size: 20px !important;
+    text-align: center;
+    color: $color__primary--light;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    //border-radius: 20px;
+    background-color: $color__accent--alpha;
+    box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
+    z-index: 60;
+
+    &--networking {
+      width: 80px;
+      height: 80px;
+      font-size: 40px !important;
+      padding: 20px;
+      margin-right: 20px;
+
+      &:hover, &:active {
+        color: $color__primary--light;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+        -o-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+
+      }
+    }
+  }
+
+  &__network {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 50px;
+
+    &__icon {
+      font-size: 40px !important;
+      text-align: center;
+      color: $color__primary--light;
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+      border-radius: 30px;
+      background-color: $color__accent--alpha;
+    }
+  }
+
+  &__picture {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 8 * 1px solid $color__primary--light;
+    box-shadow: 8px 8px 16px rgba($color__primary--dark, 0.2);
+
+
+    &--circle {
+      border-radius: 50%;
+    }
+
+    &--100 {
+      @include info__picture("http://via.placeholder.com/100x100", 100);
+    }
+
+    &--200 {
+      @include info__picture("http://via.placeholder.com/200x200", 200);
+    }
+
+    &--300 {
+      @include info__picture("http://via.placeholder.com/300x300", 300);
+    }
+  }
 }

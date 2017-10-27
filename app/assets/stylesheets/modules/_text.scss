@@ -1,10 +1,13 @@
 @import "base";
 
 $text__family--sans: 'Poppins', 'Helvetica Neue', sans-serif;
-$text__family--cursive: 'Damion', cursive;
+$text__family--cursive: 'Pacifico', cursive;
+$text__family--handwritten: 'Handlee', cursive;
+$text__family--heavy: 'Comfortaa', 'Helvetica Neue', sans-serif;
 
 $text__color--base: #333333 !default;
-$text__color--muted: #777777 !default;
+$text__color--dark: $color__primary--dark !default;
+$text__color--muted: #999999 !default;
 $text__color--alpha: $color__accent--alpha !default;
 $text__color--beta: $color__accent--beta !default;
 $text__color--charlie: $color__accent--charlie !default;
@@ -45,4 +48,32 @@ h5 {
 
 h6 {
   @include text(14, 14, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+}
+
+.text--md {
+  font-size: 24px;
+}
+
+.text--muted {
+  @include text($base__font-size, $base__line, $color: $text__color--muted);
+}
+
+.text--sticker {
+  @include text($base__font-size, $base__line, $color: $color__primary--light, $weight: 300);
+  padding: 2px;
+  display: inline-block;
+  margin: 2px 0;
+  background-color: $color__accent--alpha;
+}
+
+.text--white {
+  color: $color__primary--light;
+}
+
+.text--accent {
+  color: $color__accent--alpha;
+}
+
+.text--handwritten {
+  font-family: $text__family--handwritten;
 }

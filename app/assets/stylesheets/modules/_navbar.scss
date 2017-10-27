@@ -1,23 +1,42 @@
 @import "base";
 @import "text";
 
-$navbar__height: 50;
+$navbar__height: 30;
 $navbar__margin: 20;
 
 
 .navbar {
   //background-color: $color__primary--light;
-  background-color: transparent;
+  background-color: rgba($color__primary--light, 0.6);
+  height: $navbar__height * 1px;
+  min-height: $navbar__height * 1px;
   margin: 0;
   border: none;
   z-index: 50;
-}
+  box-shadow: 5px 5px 30px rgba($color__primary--dark, 0.2);
 
-.navbar__item {
-  @include text(16, 16, $family: $text__family--sans, $color: $text__color--base);
+  &__item {
+    @include text(14, 20, $family: $text__family--heavy);
+    line-height: 20px !important;
+    padding: 5px 15px !important;
+    color: $text__color--dark !important;
 
-  &:hover, &:active, &:focus {
-    text-decoration: none;
-    color: $text__color--alpha;
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+      color: $text__color--alpha !important;
+    }
+  }
+
+  &__brand {
+    @include text(18, 20, $family: $text__family--cursive);
+    line-height: 20px !important;
+    padding: 5px 15px !important;
+    color: $text__color--alpha !important;
+    display: block;
+
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+      color: $text__color--dark !important;
+    }
   }
 }
