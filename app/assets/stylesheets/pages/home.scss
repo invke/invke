@@ -7,22 +7,20 @@
 
 $home__profile-height: 250;
 
-$home__top-border-thickness: 30px;
-$home__left-border-thickness: 10px;
-$home__right-border-thickness: 10px;
-$home__bottom-border-thickness: 20px;
+$home__top-border-thickness: 0px;
+$home__left-border-thickness: 0px;
+$home__right-border-thickness: 0px;
+$home__bottom-border-thickness: 0px;
 
 .body {
   &__content {
     position: absolute;
-    top: $navbar__height;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - #{$navbar__height * 1px});
-    //height: 100%;
-    overflow-y: auto;
-    padding-top: 50px;
-    //background-color: $color__primary--light;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
     //background-color: rgba($color__primary--light, 0.0);
   }
 
@@ -41,7 +39,8 @@ $home__bottom-border-thickness: 20px;
             $home__bottom-border-thickness
             $home__left-border-thickness;
     z-index: -1;
-    background-image: image-url("chilean-andes--blurred.jpg");
+    background-color: $color__primary--dark;
+
   }
 
   &__foreground-overlay {
@@ -50,6 +49,7 @@ $home__bottom-border-thickness: 20px;
     left: 0;
     width: 100%;
     height: 100%;
+    //background-image: radial-gradient(circle, rgba($color__primary--brown, 0.9), $color__primary--dark);
   }
 }
 

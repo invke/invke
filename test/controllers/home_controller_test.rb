@@ -14,6 +14,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "#{@base_title}"
   end
 
+=begin
   test "should get about" do
     get home_about_url
     assert_response :success
@@ -56,5 +57,6 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Environment"
     assert_select "h2", "Workstation"
   end
+=end
 
 end

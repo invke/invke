@@ -4,6 +4,9 @@ $text__family--sans: 'Poppins', 'Helvetica Neue', sans-serif;
 $text__family--cursive: 'Pacifico', cursive;
 $text__family--handwritten: 'Handlee', cursive;
 $text__family--heavy: 'Comfortaa', 'Helvetica Neue', sans-serif;
+$text__family--tall: 'Wire One', 'Helvetica Neue', sans-serif;
+$text__family--square: 'Comfortaa', 'Helvetica Neue', sans-serif;
+$text__family--line: 'Poiret One', 'Helvetica Neue', sans-serif;
 
 $text__color--base: #333333 !default;
 $text__color--dark: $color__primary--dark !default;
@@ -27,27 +30,27 @@ p, span {
 }
 
 h1 {
-  @include text(48, 48, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  @include text(64, 64, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
 }
 
 h2 {
-  @include text(24, 24, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  @include text(24, 24, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
 }
 
 h3 {
-  @include text(20, 20, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  @include text(20, 20, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
 }
 
 h4 {
-  @include text(18, 18, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  @include text(18, 18, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
 }
 
 h5 {
-  @include text(16, 16, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  @include text(16, 16, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
 }
 
 h6 {
-  @include text(14, 14, $family: $text__family--cursive, $color: $text__color--alpha, $weight: bold);
+  @include text(14, 14, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
 }
 
 .text--md {
@@ -55,7 +58,7 @@ h6 {
 }
 
 .text--muted {
-  @include text($base__font-size, $base__line, $color: $text__color--muted);
+  color: $text__color--muted !important;
 }
 
 .text--sticker {
@@ -67,7 +70,19 @@ h6 {
 }
 
 .text--white {
-  color: $color__primary--light;
+  color: $color__primary--light !important;
+}
+
+.text--spaced-100 {
+  letter-spacing: 100px;
+}
+
+.text--spaced-40 {
+  letter-spacing: 40px;
+}
+
+.text--spaced-20 {
+  letter-spacing: 20px;
 }
 
 .text--accent {
@@ -76,4 +91,48 @@ h6 {
 
 .text--handwritten {
   font-family: $text__family--handwritten;
+}
+
+.text--square {
+  font-family: $text__family--square;
+}
+
+.text--line {
+  font-family: $text__family--line;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--emph {
+  text-shadow: 2px 2px 25px #fff;
+}
+
+.text--normal {
+  font-weight: normal !important;
+}
+
+.text--col-a {
+  color: $text__color--alpha !important;
+}
+
+.text--col-b {
+  color: $text__color--beta !important;
+}
+
+.text--col-c {
+  color: $text__color--charlie !important;
+}
+
+.text--col-d {
+  color: $text__color--delta !important;
 }

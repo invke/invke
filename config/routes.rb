@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
+  get 'blog/index'
+
+  get 'gallery/index'
+
+  get 'portfolio/index'
+
+  get 'portfolio_controller/index'
+
   get 'users/new'
 
   get 'home/index'
