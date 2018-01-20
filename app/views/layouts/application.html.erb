@@ -20,11 +20,42 @@
   </head>
 
   <body class="body">
-    <%# TEMPLATE HEADER #%>
-    <div class="body__background-overlay"></div>
+    <%# Render the background overlay %>
+    <div class="body__background-overlay">
+      <div class="xbg">
+        <div class="xbg__left">
+          <div class="xbg__left-top"></div>
+          <div class="xbg__left-top-triangle"></div>
+          <div class="xbg__left-bottom-triangle"></div>
+          <div class="xbg__left-bottom"></div>
+        </div>
+        <div class="xbg__center">
+          <div class="xbg__center-top-padding"></div>
+          <div class="xbg__center-top-left-triangle"></div>
+          <div class="xbg__center-top-right-triangle"></div>
+          <div class="xbg__center-top-padding"></div>
+          <div class="xbg__center-center"></div>
+          <div class="xbg__center-bottom-left-triangle"></div>
+          <div class="xbg__center-bottom-right-triangle"></div>
+        </div>
+        <div class="xbg__right">
+          <div class="xbg__right-top"></div>
+          <div class="xbg__right-top-triangle"></div>
+          <div class="xbg__right-bottom-triangle"></div>
+          <div class="xbg__right-bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <%# Render the foreground overlay %>
     <div class="body__foreground-overlay"></div>
+
+    <%# Render the navigation / header overlay %>
+    <%= render partial: 'shared/navigation' %>
+
     <div class="body__content">
-      <%# PAGE CONTENT #%>
+
+      <%# Render the content #%>
       <%= yield %>
 
       <!--<footer class="footer">

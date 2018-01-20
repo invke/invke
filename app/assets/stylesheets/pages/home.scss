@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "../modules/base";
 @import "../modules/text";
-@import "../modules/navbar";
+@import "shared/navigation";
 
 $home__profile-height: 250;
 
@@ -11,47 +11,6 @@ $home__top-border-thickness: 0px;
 $home__left-border-thickness: 0px;
 $home__right-border-thickness: 0px;
 $home__bottom-border-thickness: 0px;
-
-.body {
-  &__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    //background-color: rgba($color__primary--light, 0.0);
-  }
-
-  &__background-overlay,
-  &__foreground-overlay {}
-
-  &__background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - #{$home__left-border-thickness} - #{$home__right-border-thickness});
-    height: calc(100% - #{$home__top-border-thickness} - #{$home__bottom-border-thickness});
-    margin:
-            $home__top-border-thickness
-            $home__right-border-thickness
-            $home__bottom-border-thickness
-            $home__left-border-thickness;
-    z-index: -1;
-    background-color: $color__primary--dark;
-
-  }
-
-  &__foreground-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    //background-image: radial-gradient(circle, rgba($color__primary--brown, 0.9), $color__primary--dark);
-  }
-}
 
 .footer {
   height: 100px;

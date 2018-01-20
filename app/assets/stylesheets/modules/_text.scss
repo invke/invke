@@ -8,9 +8,9 @@ $text__family--tall: 'Wire One', 'Helvetica Neue', sans-serif;
 $text__family--square: 'Comfortaa', 'Helvetica Neue', sans-serif;
 $text__family--line: 'Poiret One', 'Helvetica Neue', sans-serif;
 
-$text__color--base: #333333 !default;
+$text__color--base: #333 !default;
 $text__color--dark: $color__primary--dark !default;
-$text__color--muted: #999999 !default;
+$text__color--muted: #999 !default;
 $text__color--alpha: $color__accent--alpha !default;
 $text__color--beta: $color__accent--beta !default;
 $text__color--charlie: $color__accent--charlie !default;
@@ -135,4 +135,8 @@ h6 {
 
 .text--col-d {
   color: $text__color--delta !important;
+}
+
+.text--engraved {
+  text-shadow: 0px 1px 0px rgba(white, .3), 0px -1px 0px rgba(black, .3);
 }
