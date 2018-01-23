@@ -11,3 +11,10 @@ $color__accent--delta: #ff72a7 !default;
 
 $base__font-size: 14 !default;
 $base__line: 20 !default;
+
+// Dimension vars
+$size__width--xs: 576px; // lt
+$size__width--sm: 576px; // gte
+$size__width--md: 768px; // gte
+$size__width--lg: 992px; // gte
+$size__width--xl: 1200px; // gte
