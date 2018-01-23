@@ -1,220 +1,59 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "../modules/base";
-@import "../modules/text";
-@import "shared/navigation";
+@import "modules/base";
+@import "modules/text";
 
-$home__profile-height: 250;
-
-$home__top-border-thickness: 0px;
-$home__left-border-thickness: 0px;
-$home__right-border-thickness: 0px;
-$home__bottom-border-thickness: 0px;
-
-.footer {
-  height: 100px;
-  padding: 20px;
-  background-color: $color__primary--light;
-  margin-top: 50px;
-
-  &__thanks {
-    @include text(14, 14, $family: $text__family--cursive, $color: $text__color--muted, $weight: normal);
-  }
-}
-
-.about-content {
-  //background-color: rgba($color__primary--light, 0.95);
-
-  &__left-column {
-  }
-
-  &__right-column {
-  }
-}
-
-.header {
-}
-
-.header__title {
+.home {
   position: relative;
-  @include text(46, 64, $margin: 80px, $family: $text__family--cursive, $color: $color__accent--alpha);
-  margin-top: 10px;
-  text-align: center;
-  text-shadow: 5px 5px 30px $color__primary--light;
+  height: 100%;
+  width: 100%;
 
-  /*&::before {
-    content: "Welcome to my portfolio, my name is ..";
-    @include text(16, 20, $family: $text__family--handwritten, $color: $text__color--muted, $weight: 200);
-    position: absolute;
-    left: 20%;
-    top: -20px;
-  }
-
-  &::after {
-    content: ".. or Monty for short";
-    @include text(16, 20, $family: $text__family--handwritten, $color: $text__color--muted, $weight: 200);
-    position: absolute;
-    right: 30%;
-    bottom: -20px;
-  }*/
-}
-
-.header__sub-title {
-  @include text(24, 24, $family: $text__family--sans, $color: $text__color--muted, $weight: normal);
-}
-
-.header__profile-pic {
-  height: $home__profile-height * 1px;
-  width: $home__profile-height * 1px;
-  margin: auto;
-  background: url("http://via.placeholder.com/250x250") center;
-  border-radius: ($home__profile-height / 2) * 1px;
-  border: 16px solid $color__primary--light;
-  box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
-}
-
-.header__info {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-@mixin info__pre-text($content, $text-size: 24, $line: 28, $left: -30) {
-  &::before {
-    content: $content;
-    @include text($text-size, $line, $family: $text__family--heavy, $color: $color__primary--light, $weight: bold);
-    //text-shadow: 2px 2px 0px $color__primary--light;
-    position: absolute;
-    left: $left * 1px;
-    top: (4 * $line / 7) * -1px;
-    padding: 4px 4px;
-    //border-radius: 4px;
-    border-bottom-right-radius: ($line + 8) / 2 * 1px;
-    background-color: $color__accent--alpha;
-    box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
-  }
-}
-
-@mixin info__picture($background-url, $diameter) {
-  height: $diameter * 1px;
-  width: $diameter * 1px;
-  background: url($background-url) center;
-}
-
-.about-content {
-  &__right-column {
-    padding-top: 32px;
-  }
-}
-
-.info {
-  margin-bottom: 20px;
-
-  &__content {
-    padding: 20px 20px;
-    background-color: $color__primary--light;
-    box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
-
-    &--left-icon {
-      margin-left: 40px !important;
-    }
-  }
-
-  &__text {
-    @include text(14, 20, $family: $text__family--sans);
-    position: relative;
-    text-align: left;
-    z-index: 50;
-  }
-
-
-  &__header {
-    @include text(18, 20, $family: $text__family--heavy, $color: $color__primary--light, $weight: bold);
-    //text-shadow: 2px 2px 0px $color__primary--light;
-    display: inline-block;
-    padding: 4px 4px;
-    margin: 0 0 4px 0;
-    //border-radius: 4px;
-    //border-bottom-right-radius: (20 + 8) / 2 * 1px;
-    background-color: $color__accent--alpha;
-    box-shadow: 8px 8px 16px rgba($color__primary--dark, 0.2);
-    z-index: 60;
-  }
-
-  &__icon {
-    top: 0 !important;
-    float: left;
-    font-size: 20px !important;
-    text-align: center;
-    color: $color__primary--light;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    //border-radius: 20px;
-    background-color: $color__accent--alpha;
-    box-shadow: 4px 4px 8px rgba($color__primary--dark, 0.2);
-    z-index: 60;
-
-    &--networking {
-      width: 80px;
-      height: 80px;
-      font-size: 40px !important;
-      padding: 20px;
-      margin-right: 20px;
-
-      &:hover, &:active {
-        color: $color__primary--light;
-        text-decoration: none;
-        cursor: pointer;
-        -webkit-transform: scale(1.1, 1.1);
-        -moz-transform: scale(1.1, 1.1);
-        -ms-transform: scale(1.1, 1.1);
-        -o-transform: scale(1.1, 1.1);
-        transform: scale(1.1, 1.1);
-
-      }
-    }
-  }
-
-  &__network {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 50px;
-
-    &__icon {
-      font-size: 40px !important;
-      text-align: center;
-      color: $color__primary--light;
-      width: 60px;
-      height: 60px;
-      padding: 10px;
-      border-radius: 30px;
-      background-color: $color__accent--alpha;
-    }
-  }
-
-  &__picture {
-    display: inline-block;
-    height: 100%;
+  & .welcome {
     width: 100%;
-    border: 8 * 1px solid $color__primary--light;
-    box-shadow: 8px 8px 16px rgba($color__primary--dark, 0.2);
 
-
-    &--circle {
-      border-radius: 50%;
+    &__message {
+      font-family: $text__family--heavy;
+      font-size: 18px;
+      text-align: center;
+      color: rgba(white, 0.25);
     }
 
-    &--100 {
-      @include info__picture("http://via.placeholder.com/100x100", 100);
+    &__bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
     }
 
-    &--200 {
-      @include info__picture("http://via.placeholder.com/200x200", 200);
+    &__title {
+      font-family: $text__family--heavy;
+      font-size: 24px;
+      text-transform: capitalize;
+      text-align: center;
+      letter-spacing: 10px;
+      color: rgba(white, 0.5);
     }
 
-    &--300 {
-      @include info__picture("http://via.placeholder.com/300x300", 300);
+    &__subtitle {
+      font-family: $text__family--heavy;
+      font-size: 18px;
+      text-transform: capitalize;
+      text-align: center;
+      letter-spacing: 10px;
+      color: rgba(white, 0.5);
     }
+
+    &__profile-pic {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      filter: grayscale(1);
+    }
+  }
+
+  & .introduction {
+    padding: 0 20px;
   }
 }

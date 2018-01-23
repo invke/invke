@@ -1,0 +1,57 @@
+// Shared styling for my profile components
+
+@import "modules/base";
+
+$profile-pic__size: 400px;
+
+.profile-pic {
+  position: relative;
+  width: $profile-pic__size;
+  height: $profile-pic__size;
+  margin: 40px auto;
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__picture {
+    position: relative;
+    width: $profile-pic__size;
+    height: $profile-pic__size;
+    background: image_url('portrait.png');
+    background-size: cover;
+  }
+
+  &__corner {
+    position: absolute;
+    width: $profile-pic__size / 2;
+    height: $profile-pic__size / 2;
+    &--top-left {
+      top: 0;
+      left: 0;
+      background: image_url('triangles/se-transparent.png');
+      background-size: cover;
+    }
+    &--top-right {
+      top: 0;
+      left: $profile-pic__size / 2;
+      background: image_url('triangles/sw-transparent.png');
+      background-size: cover;
+    }
+    &--bottom-left {
+      top: $profile-pic__size / 2;
+      left: 0;
+      background: image_url('triangles/ne-transparent.png');
+      background-size: cover;
+    }
+    &--bottom-right {
+      top: $profile-pic__size / 2;
+      left: $profile-pic__size / 2;
+      background: image_url('triangles/nw-transparent.png');
+      background-size: cover;
+    }
+  }
+}

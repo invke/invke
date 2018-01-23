@@ -25,12 +25,13 @@ $nav__item-colour--active: rgba($color__accent--alpha, 1);
   pointer-events: none;
 
   .invke {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    display: inline-block;
     width: 100%;
     padding: 20px;
+    margin: auto;
     font-size: 36px;
     font-family: $text__family--heavy;
     font-weight: bold;
@@ -39,13 +40,13 @@ $nav__item-colour--active: rgba($color__accent--alpha, 1);
     & > a {
       text-align: center;
       width: 100%;
-      display: inline-block;
+      display: block;
       text-decoration: none;
       color: $nav__item-colour--unfocused;
       @include transition(all 0.5s ease-in-out);
       &:hover {
         text-decoration: none;
-        color: $nav__item-colour--focused;
+        color: $color__accent--alpha;
         cursor: pointer;
       }
     }

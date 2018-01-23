@@ -9,6 +9,7 @@ $text__family--square: 'Comfortaa', 'Helvetica Neue', sans-serif;
 $text__family--line: 'Poiret One', 'Helvetica Neue', sans-serif;
 
 $text__color--base: #333 !default;
+$text__color--light: rgba(#CCC, 0.5) !default;
 $text__color--dark: $color__primary--dark !default;
 $text__color--muted: #999 !default;
 $text__color--alpha: $color__accent--alpha !default;
@@ -16,7 +17,7 @@ $text__color--beta: $color__accent--beta !default;
 $text__color--charlie: $color__accent--charlie !default;
 $text__color--delta: $color__accent--delta !default;
 
-@mixin text($size, $line, $margin: 0, $family: $text__family--sans, $color :$text__color--base, $weight: normal) {
+@mixin text($size, $line, $margin: 0, $family: $text__family--heavy, $color :$text__color--base, $weight: normal) {
   font-size: $size * 1px;
   line-height: ($line / $size);
   font-family: $family;
@@ -29,28 +30,34 @@ p, span {
   @include text($base__font-size, $base__line, $color: $text__color--base)
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $text__family--heavy;
+  color: $text__color--light;
+  font-weight: bold;
+}
+
 h1 {
-  @include text(64, 64, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
+  font-size: 64px;
 }
 
 h2 {
-  @include text(24, 24, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
+  font-size: 32px;
 }
 
 h3 {
-  @include text(20, 20, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
+  font-size: 24px;
 }
 
 h4 {
-  @include text(18, 18, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
+  font-size: 18px;
 }
 
 h5 {
-  @include text(16, 16, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
+  font-size: 16px;
 }
 
 h6 {
-  @include text(14, 14, $family: $text__family--square, $color: $text__color--dark, $weight: bold);
+  font-size: 14px;
 }
 
 .text--md {
@@ -63,10 +70,13 @@ h6 {
 
 .text--sticker {
   @include text($base__font-size, $base__line, $color: $color__primary--light, $weight: 300);
-  padding: 2px;
+  padding: 2px 6px;
   display: inline-block;
-  margin: 2px 0;
-  background-color: $color__accent--alpha;
+  margin: 4px;
+  border-radius: 10px;
+  background-color: $color__primary--faded;
+  color: $color__primary--dark;
+  box-shadow: 0px 1px 0px rgba(white, .3), 0px -1px 0px rgba(black, .3);
 }
 
 .text--white {
@@ -111,6 +121,10 @@ h6 {
 
 .text--right {
   text-align: right;
+}
+
+.text--justified {
+  text-align: justify;
 }
 
 .text--emph {
