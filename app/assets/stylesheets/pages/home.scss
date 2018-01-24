@@ -17,6 +17,7 @@
       font-size: 18px;
       text-align: center;
       color: rgba(white, 0.25);
+      //color: $text__color--base;
     }
 
     &__bottom {
@@ -33,6 +34,7 @@
       text-align: center;
       letter-spacing: 10px;
       color: rgba(white, 0.5);
+      //color: $text__color--base;
     }
 
     &__subtitle {
@@ -42,6 +44,7 @@
       text-align: center;
       letter-spacing: 10px;
       color: rgba(white, 0.5);
+      //color: $text__color--base;
     }
 
     &__profile-pic {

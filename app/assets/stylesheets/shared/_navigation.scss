@@ -11,11 +11,18 @@ $nav__slant-width: 50px;
 //$nav__item-colour--unfocused: rgba(white, 0.50);
 //$nav__item-colour--focused: rgba(white, 1);
 //$nav__item-colour--active: rgba($color__accent--alpha, 0.9);
+
 $nav__back-colour--unfocused: rgba(#888, 0.9);
 $nav__back-colour--focused: rgba(#AAA, 0.9);
 $nav__item-colour--unfocused: rgba(#FFF, 0.5);
 $nav__item-colour--focused: rgba(#FFF, 0.9);
 $nav__item-colour--active: rgba($color__accent--alpha, 1);
+
+//$nav__back-colour--unfocused: rgba(#888, 0.9);
+//$nav__back-colour--focused: rgba(#444, 0.9);
+//$nav__item-colour--unfocused: rgba(#000, 0.5);
+//$nav__item-colour--focused: rgba(#000, 0.9);
+//$nav__item-colour--active: rgba($color__accent--alpha, 1);
 
 .navigation {
   position: absolute;
