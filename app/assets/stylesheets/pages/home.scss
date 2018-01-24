@@ -29,22 +29,24 @@
 
     &__title {
       font-family: $text__family--heavy;
-      font-size: 24px;
+      font-size: 18px;
+      font-weight: normal !important;
       text-transform: capitalize;
       text-align: center;
       letter-spacing: 10px;
-      color: rgba(white, 0.5);
-      //color: $text__color--base;
+      //color: rgba(white, 0.5);
+      color: $text__color--base;
     }
 
     &__subtitle {
       font-family: $text__family--heavy;
       font-size: 18px;
+      font-weight: normal !important;
       text-transform: capitalize;
       text-align: center;
       letter-spacing: 10px;
-      color: rgba(white, 0.5);
-      //color: $text__color--base;
+      //color: rgba(white, 0.5);
+      color: rgba($text__color--base, 0.5);
     }
 
     &__profile-pic {
@@ -52,7 +54,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      filter: grayscale(1);
+      //filter: grayscale(1);
     }
   }
 

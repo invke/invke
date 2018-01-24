@@ -22,6 +22,7 @@ html, body {
   overflow: hidden;
   background: image_url('green-sea.jpg') no-repeat 50% 50%;
   background-size: cover;
+  //background: white;
 
   &__content {
     position: absolute;
@@ -29,7 +30,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 100px $xbg__right--width + 20px 100px $xbg__left--width + 20px;
+    padding: 50px $xbg__right--width + 20px 50px $xbg__left--width + 20px;
     overflow-y: scroll;
     overflow-x: hidden;
     //background-color: white;
@@ -47,7 +48,15 @@ html, body {
     z-index: -1;
     opacity: $xbg__transparency;
 
+    & .mask {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      //background-image: radial-gradient(circle at bottom, rgba(white, 1.0), rgba(white, 1.0), rgba(white, 0.5));
+    }
+
     & .xbg {
+      display: none;
       position: relative;
       width: 100%;
       height: 100%;
@@ -73,11 +82,13 @@ html, body {
           width: $xbg__left--width;
           background: image_url('triangles/nw-transparent.png');
           background-size: cover;
+          //background-color: transparent;
         }
         &-bottom {
           height: calc(50% - #{$xbg__left--width});
           width: $xbg__left--width;
           background-color: $xbg__color;
+          //background-color: transparent;
         }
       }
       &__center {
@@ -141,12 +152,14 @@ html, body {
           width: $xbg__right--width;
           background: image_url('triangles/se-transparent.png');
           background-size: cover;
+          background: white;
         }
         &-bottom-triangle {
           height: $xbg__right--width;
           width: $xbg__right--width;
           background: image_url('triangles/ne-transparent.png');
           background-size: cover;
+          background: white;
         }
         &-bottom {
           height: calc(50% - #{$xbg__right--width});
