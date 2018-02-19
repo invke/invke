@@ -19,8 +19,37 @@ $base__font-size: 14 !default;
 $base__line: 20 !default;
 
 // Dimension vars
-$size__width--xs: 576px; // lt
+$size__width--xs: 575px; // lte
 $size__width--sm: 576px; // gte
 $size__width--md: 768px; // gte
 $size__width--lg: 992px; // gte
 $size__width--xl: 1200px; // gte
+
+.hide {
+  display: none;
+  &--xs {
+    @media (max-width: $size__width--sm - 1px) {
+      display: none;
+    }
+  }
+  &--sm {
+    @media (min-width: $size__width--sm) and (max-width: $size__width--md - 1px) {
+      display: none;
+    }
+  }
+  &--md {
+    @media (min-width: $size__width--md) and (max-width: $size__width--lg - 1px) {
+      display: none;
+    }
+  }
+  &--lg {
+    @media (min-width: $size__width--lg) and (max-width: $size__width--xl - 1px) {
+      display: none;
+    }
+  }
+  &--xl {
+    @media (min-width: $size__width--xl) {
+      display: none;
+    }
+  }
+}
