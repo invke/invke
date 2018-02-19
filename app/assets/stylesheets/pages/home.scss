@@ -9,6 +9,8 @@
   height: 100%;
   width: 100%;
 
+  $bottom__height: 100px;
+
   & .welcome {
     width: 100%;
 
@@ -22,8 +24,9 @@
 
     &__bottom {
       position: absolute;
-      bottom: 0;
+      bottom: $bottom__height;
       left: 0;
+      height: $bottom__height;
       width: 100%;
     }
 

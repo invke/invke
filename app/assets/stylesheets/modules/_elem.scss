@@ -29,11 +29,19 @@ html, body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
-    padding: 50px $xbg__right--width + 20px 50px $xbg__left--width + 20px;
-    overflow-y: scroll;
+    margin-top: 50px;
+    //margin: 50px $xbg__right--width + 20px 50px $xbg__left--width + 20px;
+    overflow-y: auto;
     overflow-x: hidden;
     //background-color: white;
+    @media (max-width: $size__width--md - 1px) { // sm & xs
+      margin-left: calc(15% - 2px);
+      width: calc(70% + 2px);
+    }
+    @media (min-width: $size__width--md) { // md, lg & xl
+      margin-left: calc(15% - 2px);
+      width: calc(70% + 2px);
+    }
   }
 
   &__background-overlay,
