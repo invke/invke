@@ -110,8 +110,29 @@ $nav__item-colour--active: rgba($color__accent--alpha, 1);
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
-    padding: 10px;
     pointer-events: all;
+    //border-top: 1px solid rgba($color__secondary, 0.05);
+    //border-bottom: 1px solid rgba($color__secondary, 0.05);
+    @media (max-width: $size__width--md - 1px) { // sm & xs
+      width: calc(15% - 2px);
+    }
+    @media (min-width: $size__width--md) { // md, lg & xl
+      width: calc(5% - 1px);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1px;
+      height: 100%;
+      width: 1px;
+      background: rgba($color__primary, 0.7);
+      //background: red;
+      @media (max-width: $size__width--sm - 1px) {
+        // text hidden on xs, no need to subdue mask line
+        background: transparent;
+      }
+    }
 
     &__wrapper {
       list-style: none;
@@ -121,9 +142,10 @@ $nav__item-colour--active: rgba($color__accent--alpha, 1);
 
     // nav item
     &__item {
-      height: 40px;
-      width: auto;
-      margin: 10px;
+      position: relative;
+      height: auto;
+      width: 40px;
+      margin: 10px auto;
       @include transition(all 0.5s ease-in-out);
       &:hover {
       }
@@ -212,8 +234,23 @@ $nav__item-colour--active: rgba($color__accent--alpha, 1);
     }
 
     &__item-text {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate3d(0, -50%, 0);
+      -webkit-transform: translate3d(0, -50%, 0);
+      z-index: 50;
       color: rgba($nav__item-colour--unfocused, 0.1);
       @include transition(all 0.5s ease-in-out);
+      @media (max-width: $size__width--sm - 1px) {
+        // text hidden on xs, no need to subdue mask line
+        top: 90%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 0;
+      }
     }
 
     &__item-emblem {
