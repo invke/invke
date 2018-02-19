@@ -1,3 +1,17 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "modules/base";
+
+.about {
+  position: relative;
+  margin: 60px 0;
+  padding: 15px;
+  background-color: rgba($color__primary, 0.7);
+  border: 1px solid rgba($color__secondary, 0.05);
+
+  & .profile-pic {
+    z-index: 10;
+  }
+}

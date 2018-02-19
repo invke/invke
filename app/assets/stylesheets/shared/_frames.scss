@@ -1,0 +1,13 @@
+// styling rules around element frames
+
+@import "modules/base";
+
+.frame {
+  //background-color: $color__primary--dark;
+  z-index: 20;
+  border: 1px solid $color__primary--dark;
+
+  /*& p, & span, & h1, & h2, & h3, & h4, & h5, & h6 {
+    color: white;
+  }*/
+}

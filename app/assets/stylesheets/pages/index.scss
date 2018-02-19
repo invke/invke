@@ -35,7 +35,7 @@ $footer-height: 200px;
       padding: 10px 0;
       display: inline-block;
       text-decoration: none;
-      color: $text__color--base;
+      color: $text__color--primary;
       -webkit-transition: all 1s ease-in-out;
       -moz-transition: all 1s ease-in-out;
       -ms-transition: all 1s ease-in-out;
@@ -45,7 +45,7 @@ $footer-height: 200px;
       &:hover {
         display: inline-block;
         text-decoration: none !important;
-        color: $text__color--base;
+        color: $text__color--primary;
         font-weight: bold;
         -webkit-transform: scale(1.2, 1.2);
         -moz-transform: scale(1.2, 1.2);

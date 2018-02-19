@@ -13,7 +13,7 @@
     width: 100%;
 
     &__message {
-      font-family: $text__family--heavy;
+      font-family: $text__family--line;
       font-size: 18px;
       text-align: center;
       color: rgba(white, 0.25);
@@ -28,25 +28,25 @@
     }
 
     &__title {
-      font-family: $text__family--heavy;
+      font-family: $text__family--line;
       font-size: 18px;
       font-weight: normal !important;
       text-transform: capitalize;
       text-align: center;
       letter-spacing: 10px;
       //color: rgba(white, 0.5);
-      color: $text__color--base;
+      color: rgba($text__color--primary, 0.3);
     }
 
     &__subtitle {
-      font-family: $text__family--heavy;
+      font-family: $text__family--line;
       font-size: 18px;
       font-weight: normal !important;
       text-transform: capitalize;
       text-align: center;
       letter-spacing: 10px;
       //color: rgba(white, 0.5);
-      color: rgba($text__color--base, 0.5);
+      color: rgba($text__color--primary, 0.5);
     }
 
     &__profile-pic {

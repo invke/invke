@@ -1,14 +1,20 @@
-$color__primary--light: #FFFFFF !default;
-$color__primary: #C1C1C1 !default;
+// Primary colour and variations
+//$color__primary: #FFF !default;
+//$color__primary: #202027 !default;
+$color__primary: #111 !default;
+$color__primary--faded: rgba($color__primary, 0.5);
 $color__primary--dark: #302829 !default;
 $color__primary--brown: #35242b !default;
-$color__primary--faded: rgba(#EEE, 0.5);
-
-$color__accent--alpha: #ff6631 !default;
-$color__accent--beta: #22b1c9 !default;
-$color__accent--charlie: #56b55d !default;
+// Secondary colour and variations
+//$color__secondary: #000 !default;
+$color__secondary: #FFF !default;
+// Accent colours
+$color__accent--alpha: #5552b1 !default;
+$color__accent--beta: #56b55d !default;
+$color__accent--charlie: #ff6631 !default;
 $color__accent--delta: #ff72a7 !default;
 
+// Base font variables
 $base__font-size: 14 !default;
 $base__line: 20 !default;
 

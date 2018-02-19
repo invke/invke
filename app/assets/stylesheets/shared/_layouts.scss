@@ -1,0 +1,42 @@
+// styling rules for layouts
+
+@import "modules/base";
+
+.two-column {
+  position: relative;
+  width: 100%;
+
+  $vertical-line__width: 1px;
+
+  &__left-column {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    @media (max-width: $size__width--md - 1px) {
+      width: 100%;
+    }
+  }
+
+  &__vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: $vertical-line__width;
+    background-color: rgba($color__secondary, 0.1);
+    // Hide the vertical line on small layouts, where columns are stacked
+    @media (max-width: $size__width--md - 1px) {
+      display: none;
+    }
+  }
+
+  &__right-column {
+    width: calc(50% - #{$vertical-line__width});
+    height: 100%;
+    float: right;
+    @media (max-width: $size__width--md - $vertical-line__width) {
+      width: 100%;
+      float: none;
+    }
+  }
+}

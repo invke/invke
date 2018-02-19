@@ -2,7 +2,7 @@
 
 @import "modules/base";
 
-$profile-pic__size: 400px;
+$profile-pic__size: 100px;
 
 .profile-pic {
   position: relative;
@@ -23,35 +23,47 @@ $profile-pic__size: 400px;
     height: $profile-pic__size;
     background: image_url('portrait.png');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
   }
+
+  $corner__size: $profile-pic__size / 2;
 
   &__corner {
     position: absolute;
-    width: $profile-pic__size / 2;
-    height: $profile-pic__size / 2;
+    width: $corner__size;
+    height: $corner__size;
     &--top-left {
       top: 0;
       left: 0;
-      background: image_url('triangles/se-transparent.png');
-      background-size: cover;
+      //background: image_url('triangles/se-transparent.png');
+      //background-size: cover;
+      border-top: $corner__size solid $color__primary;
+      border-right: $corner__size solid transparent;
     }
     &--top-right {
       top: 0;
-      left: $profile-pic__size / 2;
-      background: image_url('triangles/sw-transparent.png');
-      background-size: cover;
+      left: 50%;
+      //background: image_url('triangles/sw-transparent.png');
+      //background-size: cover;
+      border-top: $corner__size solid $color__primary;
+      border-left: $corner__size solid transparent;
     }
     &--bottom-left {
-      top: $profile-pic__size / 2;
+      top: 50%;
       left: 0;
-      background: image_url('triangles/ne-transparent.png');
-      background-size: cover;
+      //background: image_url('triangles/ne-transparent.png');
+      //background-size: cover;
+      border-bottom: $corner__size solid $color__primary;
+      border-right: $corner__size solid transparent;
     }
     &--bottom-right {
-      top: $profile-pic__size / 2;
-      left: $profile-pic__size / 2;
-      background: image_url('triangles/nw-transparent.png');
-      background-size: cover;
+      top: 50%;
+      left: 50%;
+      //background: image_url('triangles/nw-transparent.png');
+      //background-size: cover;
+      border-bottom: $corner__size solid $color__primary;
+      border-left: $corner__size solid transparent;
     }
   }
 }

@@ -8,16 +8,15 @@ $text__family--tall: 'Wire One', 'Helvetica Neue', sans-serif;
 $text__family--square: 'Comfortaa', 'Helvetica Neue', sans-serif;
 $text__family--line: 'Poiret One', 'Helvetica Neue', sans-serif;
 
-$text__color--base: #333 !default;
-$text__color--light: rgba(#CCC, 0.5) !default;
-$text__color--dark: #111 !default;
-$text__color--muted: #999 !default;
+$text__color--primary: $color__secondary !default;
+$text__color--light: $color__primary !default;
+$text__color--muted: rgba($text__color--primary, 0.7) !default;
 $text__color--alpha: $color__accent--alpha !default;
 $text__color--beta: $color__accent--beta !default;
 $text__color--charlie: $color__accent--charlie !default;
 $text__color--delta: $color__accent--delta !default;
 
-@mixin text($size, $line, $margin: 0, $family: $text__family--heavy, $color :$text__color--base, $weight: normal) {
+@mixin text($size, $line, $margin: 0, $family: $text__family--line, $color :$text__color--primary, $weight: normal) {
   font-size: $size * 1px;
   line-height: ($line / $size);
   font-family: $family;
@@ -27,12 +26,12 @@ $text__color--delta: $color__accent--delta !default;
 }
 
 p, span {
-  @include text($base__font-size, $base__line, $color: $text__color--base)
+  @include text($base__font-size, $base__line, $color: $text__color--primary)
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $text__family--heavy;
-  color: $text__color--light;
+  font-family: $text__family--line;
+  color: $text__color--primary;
   font-weight: bold;
 }
 
@@ -64,12 +63,16 @@ h6 {
   font-size: 24px;
 }
 
+.text--lg {
+  font-size: 32px;
+}
+
 .text--muted {
   color: $text__color--muted !important;
 }
 
 .text--sticker {
-  @include text($base__font-size, $base__line, $color: $color__primary--light, $weight: 300);
+  @include text($base__font-size, $base__line, $color: $text__color--light, $weight: 300);
   padding: 2px 6px;
   display: inline-block;
   margin: 4px;
@@ -80,7 +83,7 @@ h6 {
 }
 
 .text--white {
-  color: $color__primary--light !important;
+  color: $text__color--light !important;
 }
 
 .text--spaced-100 {
